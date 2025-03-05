@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #0ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .todo-container {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #0ff;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff007f;
+            text-shadow: 0 0 10px #ff007f;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            background: #0f0f1a;
+            border: 1px solid #0ff;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #0ff;
+            outline: none;
+            box-shadow: 0 0 8px #0ff;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            text-transform: uppercase;
+        }
+
+        #addTaskBtn {
+            background-color: #00ffcc;
+            color: #000;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        #addTaskBtn:hover {
+            background-color: #00cc99;
+            box-shadow: 0 0 15px #00ffcc;
+        }
+
+        #clearAllBtn {
+            background-color: #ff007f;
+            color: #000;
+            box-shadow: 0 0 10px #ff007f;
+        }
+
+        #clearAllBtn:hover {
+            background-color: #cc0066;
+            box-shadow: 0 0 15px #ff007f;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #0f0f1a;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 8px #0ff;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #ff007f;
+        }
+
+        .delete {
+            background-color: #ff3333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ff3333;
+        }
+
+        .delete:hover {
+            background-color: #cc0000;
+            box-shadow: 0 0 15px #ff3333;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h1>Todo List</h1>
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <div class="button-container">
+            <button id="addTaskBtn">Add Task</button>
+            <button id="clearAllBtn">Clear All</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
