@@ -17,6 +17,7 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            padding: 10px;
         }
 
         .todo-container {
@@ -49,7 +50,15 @@
 
         .button-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        @media (min-width: 600px) {
+            .button-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
 
         button {
@@ -60,6 +69,13 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.1s ease;
             text-transform: uppercase;
+            width: 100%;
+        }
+
+        @media (min-width: 600px) {
+            button {
+                width: auto;
+            }
         }
 
         #addTaskBtn {
@@ -121,7 +137,7 @@
 </head>
 <body>
     <div class="todo-container">
-        <h1>Todo List</h1>
+        <h1>Cyberpunk Todo List</h1>
         <input type="text" id="taskInput" placeholder="Add a new task">
         <div class="button-container">
             <button id="addTaskBtn">Add Task</button>
